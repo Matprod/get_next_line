@@ -6,7 +6,7 @@
 /*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:17:59 by Matprod           #+#    #+#             */
-/*   Updated: 2023/12/04 19:46:47 by Matprod          ###   ########.fr       */
+/*   Updated: 2023/12/05 16:12:16 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char	*read_and_stock(int fd, char *stack)
 		if (readed == -1)
 		{
 			free(buffer);
+			free(stack);
 			return (NULL);
 		}
 		buffer[readed] = '\0';
@@ -105,7 +106,7 @@ char	*get_next_line(int fd)
 	stack[fd] = after_endline(stack[fd]);
 	return (line);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -157,4 +158,4 @@ int main()
 	close(fd2);
 	close(fd3);
     return (0);
-}
+}*/

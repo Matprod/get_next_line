@@ -6,7 +6,7 @@
 /*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:14:01 by Matprod           #+#    #+#             */
-/*   Updated: 2023/12/04 19:17:39 by Matprod          ###   ########.fr       */
+/*   Updated: 2023/12/05 16:11:21 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char	*read_and_stock(int fd, char *stack)
 		if (readed == -1)
 		{
 			free(buffer);
+			free(stack);
 			return (NULL);
 		}
 		buffer[readed] = '\0';
