@@ -6,7 +6,7 @@
 /*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:14:53 by Matprod           #+#    #+#             */
-/*   Updated: 2023/12/04 19:39:20 by Matprod          ###   ########.fr       */
+/*   Updated: 2023/12/05 21:47:16 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*read_and_stock(int fd, char *stack);
 
 size_t	ft_strlen(const char *s);
 
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(char *s1, char const *s2);
 
 int		ft_strchr(const char *s, int c);
 

@@ -6,7 +6,7 @@
 /*   By: Matprod <matprod42@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:18:14 by Matprod           #+#    #+#             */
-/*   Updated: 2023/12/05 15:37:54 by Matprod          ###   ########.fr       */
+/*   Updated: 2023/12/05 21:47:46 by Matprod          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,30 @@ int	ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
-	char			*strjoin;
-	unsigned int	i;
-	unsigned int	j;
+	char	*dest;
+	size_t	i;
+	size_t	destlen;
 
 	i = 0;
-	j = 0;
-	strjoin = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!strjoin)
+	destlen = ft_strlen(s1) + ft_strlen(s2);
+	dest = malloc(destlen + 1 * sizeof(char));
+	if (!dest)
 		return (NULL);
-	while (s1[i])
+	while (*(s1 + i))
 	{
-		strjoin[i] = s1[i];
-		i ++;
+		*(dest + i) = *(s1 + i);
+		i++;
 	}
-	while (s2[j])
+	while (*s2)
 	{
-		strjoin[j + i] = s2[j];
-		j ++;
+		*(dest + i) = *s2++;
+		i++;
 	}
-	strjoin[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	*(dest + i) = '\0';
 	free(s1);
-	return (strjoin);
+	return (dest);
 }
 
 char	*ft_strdup(const char *s)
